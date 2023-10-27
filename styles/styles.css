@@ -1,0 +1,13 @@
+body,li{
+    font-family: Roboto, Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 300 !important;
+}
+
+h5, h1, h2, h3, h4{
+    font-weight: 300 !important;
+    letter-spacing: .2rem;
+}
+
+.title{
+    letter-spacing: .2rem;
+}
