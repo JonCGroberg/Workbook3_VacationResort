@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -29,6 +29,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-mdw-100 px-2">
       <div class="container-fluid">
+        <!-- Logo -->
         <a class="navbar-brand text-uppercase title" href="#"
           >Sea Cliff Resort</a
         >
@@ -43,6 +44,7 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+        <!-- Nav Items -->
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav nav-underline">
             <li class="nav-item">
@@ -70,6 +72,7 @@
     <div class="container-fluid">
       <div class="card mt-5 m-auto" style="max-width: 40rem">
         <form class="card-body row row-gap-3 justic" action="">
+          <!-- Name -->
           <div class="col-6">
             <label class="form-label" for="firstName">First name</label>
             <input class="form-control" type="text" placeholder="" />
@@ -84,11 +87,12 @@
               placeholder=""
             />
           </div>
-
+          <!-- Email -->
           <div class="col-12">
             <label class="form-label" for="email">Email</label>
             <input class="form-control col-6" type="email" placeholder="" />
           </div>
+          <!-- Dates -->
           <div class="col-6">
             <label class="form-label" for="checkIn">Check in date</label>
             <input
@@ -110,39 +114,41 @@
               placeholder=""
             />
           </div>
-         
-          <div class="col-4">
-            <div class="input-group text-center">
-              <label class="form-label" for="adults">Adults: 1</label>
-              <input
-                class="form-range"
-                type="range"
-                name="adults"
-                id="adults"
-                min="1"
-                max="4"
-                value="1"
-              />
+          <div class="col-6">
+            <div class="col-12">
+              <div class="input-group text-center">
+                <label class="form-label" for="adults">Adults: 1</label>
+                <input
+                  class="form-range"
+                  type="range"
+                  name="adults"
+                  id="adults"
+                  min="1"
+                  max="4"
+                  value="1"
+                />
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="input-group text-center">
+                <label class="form-label" for="children">Children: 0</label>
+                <input
+                  class="form-range"
+                  type="range"
+                  name="children"
+                  id="children"
+                  min="0"
+                  max="4"
+                  value="0"
+                />
+              </div>
             </div>
           </div>
-          <div class="col-4">
-            <div class="input-group text-center">
-              <label class="form-label" for="children">Children: 0</label>
-              <input
-                class="form-range"
-                type="range"
-                name="children"
-                id="children"
-                min="0"
-                max="4"
-                value="0"
-              />
-            </div>
-          </div>
-          <div class="col-4">
+          <!-- Room Types + Adults & Children -->
+          <div class="col-6">
             <label class="form-label" for="roomType">Room type</label>
             <div class="col-12">
-              <div class="form-check ">
+              <div class="form-check">
                 <label class="form-check-label" for="queen">Queen</label>
                 <input
                   class="form-check-input"
@@ -151,7 +157,7 @@
                   id="queen"
                 />
               </div>
-              <div class="form-check ">
+              <div class="form-check">
                 <label class="form-check-label" for="king">King</label>
                 <input
                   class="form-check-input"
@@ -161,22 +167,23 @@
                 />
               </div>
               <div class="form-check">
-              <label class="form-check-label" for="twoBedRoomSuite"
-                >2-Bedroom Suite</label
-              >
-              <input
-                class="form-check-input"
-                type="radio"
-                name="roomType"
-                id="twoBedRoomSuite"
-              />
+                <label class="form-check-label" for="twoBedRoomSuite"
+                  >2-Bedroom Suite</label
+                >
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="roomType"
+                  id="twoBedRoomSuite"
+                />
               </div>
             </div>
           </div>
+          <!-- Discounts -->
           <div class="col-12">
             <label class="form-label" for="discounts">Discounts</label>
             <div class="col-12">
-              <div class="form-check ">
+              <div class="form-check">
                 <label class="form-check-label" for="queen">Queen</label>
                 <input
                   class="form-check-input"
@@ -185,7 +192,7 @@
                   id="queen"
                 />
               </div>
-              <div class="form-check ">
+              <div class="form-check">
                 <label class="form-check-label" for="king">King</label>
                 <input
                   class="form-check-input"
@@ -195,15 +202,15 @@
                 />
               </div>
               <div class="form-check">
-              <label class="form-check-label" for="twoBedRoomSuite"
-                >2-Bedroom Suite</label
-              >
-              <input
-                class="form-check-input"
-                type="radio"
-                name="roomType"
-                id="twoBedRoomSuite"
-              />
+                <label class="form-check-label" for="twoBedRoomSuite"
+                  >2-Bedroom Suite</label
+                >
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="roomType"
+                  id="twoBedRoomSuite"
+                />
               </div>
             </div>
           </div>
