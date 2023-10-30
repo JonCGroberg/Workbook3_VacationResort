@@ -28,6 +28,7 @@
     ></script>
     <!-- Custom JS and CSS -->
     <link rel="stylesheet" href="styles/styles.css" />
+    <script type="module" src="scripts/quotePage.js"></script>
   </head>
   <body
     class=""
@@ -79,7 +80,7 @@
         style="filter: brightness(80%)"
       />
       <div class="p-5 p-sm-5"></div>
-      <div class="container-fluid py-5 px-4">
+      <div class="container-fluid px-4">
         <div
           class="card mx-auto bg-dark-subtle rounded-0"
           style="max-width: 40rem"
@@ -88,11 +89,12 @@
             <div class="">Your Quote</div>
           </div>
           <form
-            class="card-body row row-gap-3 row-gap-sm-0 g-sm-4 p-5"
-            action=""
+            class="card-body row row-gap-3 row-gap-sm-0 g-sm-4 p-5 needs-validation"
+            novalidate
+            id="quoteForm"
           >
-            <!-- Name -->
-            <div class="col-sm-6 col-12">
+            <!-- Names -->
+            <!-- <div class="col-sm-6 col-12">
               <label class="form-label" for="firstName">First name</label>
               <input class="form-control" type="text" placeholder="" />
             </div>
@@ -105,12 +107,12 @@
                 id="lastName"
                 placeholder=""
               />
-            </div>
+            </div> -->
             <!-- Email -->
-            <div class="col-12">
+            <!-- <div class="col-12">
               <label class="form-label" for="email">Email</label>
               <input class="form-control col-6" type="email" placeholder="" />
-            </div>
+            </div> -->
             <!-- Dates -->
             <div class="col-6">
               <label class="form-label" for="checkIn">Check in date</label>
@@ -121,23 +123,25 @@
                 name="checkIn"
                 id="checkIn"
                 placeholder=""
+                required
               />
             </div>
             <div class="col-6">
-              <label class="form-label" for="checkOutDate"
-                >Check out date</label
-              >
+              <label class="form-label" for="checkOut">Check out date</label>
               <input
                 class="form-control col-6"
-                type="number"
-                name="nights"
-                id="nights"
+                type="text"
+                onfocus="(this.type = 'date')"
+                name="checkOut"
+                id="checkOut"
                 placeholder=""
+                required
               />
             </div>
-            <div class="col-sm-4 col-12">
-              <div class="col-12">
-                <div class="input-group text-center">
+            <!-- Adults & Children -->
+            <div class="col-sm-12 col-12 align-content-center">
+              <div class="row">
+                <div class="col-12 col-sm-6">
                   <label class="form-label" for="adults">Adults: 1</label>
                   <input
                     class="form-range"
@@ -149,9 +153,7 @@
                     value="1"
                   />
                 </div>
-              </div>
-              <div class="col-12">
-                <div class="input-group text-center">
+                <div class="col-12 col-sm-6">
                   <label class="form-label" for="children">Children: 0</label>
                   <input
                     class="form-range"
@@ -165,8 +167,8 @@
                 </div>
               </div>
             </div>
-            <!-- Room Types + Adults & Children -->
-            <div class="col-sm-4 col-12">
+            <!-- Room Types -->
+            <div class="col-sm-6 col-12">
               <label class="form-label" for="roomType">Room type</label>
               <div class="col-12">
                 <div class="form-check">
@@ -176,6 +178,7 @@
                     type="radio"
                     name="roomType"
                     id="queen"
+                    required
                   />
                 </div>
                 <div class="form-check">
@@ -188,54 +191,71 @@
                   />
                 </div>
                 <div class="form-check">
-                  <label class="form-check-label" for="twoBedRoomSuite"
+                  <label class="form-check-label" for="twoBedroomSuite"
                     >2-Bedroom Suite</label
                   >
                   <input
                     class="form-check-input"
                     type="radio"
                     name="roomType"
-                    id="twoBedRoomSuite"
+                    id="twoBedroomSuite"
                   />
                 </div>
               </div>
             </div>
             <!-- Discounts -->
-            <div class="col-sm-4 col-12">
+            <div class="col-sm-6 col-12">
               <label class="form-label" for="discounts">Discounts</label>
               <div class="col-12">
                 <div class="form-check">
-                  <label class="form-check-label" for="queen">Queen</label>
+                  <label class="form-check-label" for="senior">Senior</label>
                   <input
                     class="form-check-input"
-                    type="radio"
-                    name="roomType"
-                    id="queen"
+                    type="checkbox"
+                    name="discounts"
+                    id="senior"
                   />
                 </div>
                 <div class="form-check">
-                  <label class="form-check-label" for="king">King</label>
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="roomType"
-                    id="king"
-                  />
-                </div>
-                <div class="form-check">
-                  <label class="form-check-label" for="twoBedRoomSuite"
-                    >2-Bedroom Suite</label
+                  <label class="form-check-label" for="military"
+                    >Military</label
                   >
                   <input
                     class="form-check-input"
-                    type="radio"
-                    name="roomType"
-                    id="twoBedRoomSuite"
+                    type="checkbox"
+                    name="discounts"
+                    id="military"
                   />
                 </div>
               </div>
             </div>
+            <!-- Quote -->
+            <div class="col-sm-6 col-12">
+              <textarea
+                class="form-control-plaintext"
+                name="quote"
+                id="quote"
+                rows="4"
+                readonly
+              ></textarea>
+            </div>
+            <!-- Reserve -->
+            <div class="col-sm-6 col-12">
+              <button class="btn-primary btn col-12" type="submit" id="submit">
+                Reserve
+              </button>
+              <div class="form-text">Get this price (Limited availabilty)</div>
+            </div>
           </form>
+          <div class="card-footer px-5">
+            <div class="form-text">
+              You will be staying
+              <bold class="fw-bold text-danger-emphasis tit" id="numOfNights"
+                >1</bold
+              >
+              night
+            </div>
+          </div>
         </div>
       </div>
       <!-- <div class="p-5"></div> -->
