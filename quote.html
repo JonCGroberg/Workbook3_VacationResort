@@ -30,11 +30,7 @@
     <link rel="stylesheet" href="styles/styles.css" />
     <script type="module" src="scripts/quotePage.js"></script>
   </head>
-  <body
-    class=""
-    data-bs-theme="dark"
-    onscroll="document.getElementById('nav').classList.add('bg-nav');document.getElementById('nav').classList.remove('position-absolute')"
-  >
+  <body class="" data-bs-theme="dark">
     <!-- Navbar -->
     <nav
       class="navbar navbar-expand-md w-100 px-2 sticky-top position-absolute position-fixed"
@@ -50,9 +46,8 @@
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          onclick="document.getElementById('nav').classList.toggle('bg-nav')"
+          style="border-style: none"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -81,24 +76,22 @@
       />
       <div class="p-5 p-sm-5"></div>
       <div class="container-fluid px-4">
-        <div
-          class="card mx-auto bg-dark-subtle rounded-0"
+        <form
+          class="card mx-auto bg-dark-subtle rounded-0 needs-validation"
+          novalidate
+          id="quoteForm"
           style="max-width: 40rem"
         >
           <div class="card-header py-sm-4 py-4 px-sm-5 px-5">
             <div class="">Your Quote</div>
           </div>
-          <form
-            class="card-body row row-gap-3 row-gap-sm-0 g-sm-4 p-5 needs-validation"
-            novalidate
-            id="quoteForm"
-          >
+          <div class="card-body row row-gap-3 row-gap-sm-0 g-sm-4 p-5">
             <!-- Names -->
-            <!-- <div class="col-sm-6 col-12">
+            <div class="col-sm- col-12">
               <label class="form-label" for="firstName">First name</label>
-              <input class="form-control" type="text" placeholder="" />
+              <input class="form-control" type="text" placeholder="" required />
             </div>
-            <div class="col-sm-6 col-12">
+            <!-- <div class="col-sm-6 col-6">
               <label class="form-label" for="lastName">Last name</label>
               <input
                 class="form-control"
@@ -109,15 +102,20 @@
               />
             </div> -->
             <!-- Email -->
-            <!-- <div class="col-12">
+            <div class="col-12">
               <label class="form-label" for="email">Email</label>
-              <input class="form-control col-6" type="email" placeholder="" />
-            </div> -->
+              <input
+                class="form-control col-6"
+                type="email"
+                placeholder=""
+                required
+              />
+            </div>
             <!-- Dates -->
             <div class="col-6">
               <label class="form-label" for="checkIn">Check in date</label>
               <input
-                class="form-control col-6"
+                class="form-control col-6 text"
                 type="text"
                 onfocus="(this.type = 'date')"
                 name="checkIn"
@@ -142,7 +140,9 @@
             <div class="col-sm-12 col-12 align-content-center">
               <div class="row">
                 <div class="col-12 col-sm-6">
-                  <label class="form-label" for="adults">Adults: 1</label>
+                  <label class="form-label" for="adults"
+                    >Adults: <span class="fw-bold">1</span></label
+                  >
                   <input
                     class="form-range"
                     type="range"
@@ -154,7 +154,9 @@
                   />
                 </div>
                 <div class="col-12 col-sm-6">
-                  <label class="form-label" for="children">Children: 0</label>
+                  <label class="form-label" for="children"
+                    >Children: <span class="fw-bold">0</span></label
+                  >
                   <input
                     class="form-range"
                     type="range"
@@ -188,6 +190,7 @@
                     type="radio"
                     name="roomType"
                     id="king"
+                    required
                   />
                 </div>
                 <div class="form-check">
@@ -199,6 +202,7 @@
                     type="radio"
                     name="roomType"
                     id="twoBedroomSuite"
+                    required
                   />
                 </div>
               </div>
@@ -231,34 +235,44 @@
             </div>
             <!-- Quote -->
             <div class="col-sm-6 col-12">
-              <textarea
+              <label
                 class="form-control-plaintext"
                 name="quote"
                 id="quote"
                 rows="4"
                 readonly
-              ></textarea>
+              ></label>
             </div>
-            <!-- Reserve -->
-            <div class="col-sm-6 col-12">
-              <button class="btn-primary btn col-12" type="submit" id="submit">
-                Reserve
-              </button>
-              <div class="form-text">Get this price (Limited availabilty)</div>
-            </div>
-          </form>
-          <div class="card-footer px-5">
-            <div class="form-text">
-              You will be staying
-              <bold class="fw-bold text-danger-emphasis tit" id="numOfNights"
-                >1</bold
-              >
-              night
-            </div>
+            <!-- Message -->
           </div>
-        </div>
+          <div class="card-footer px-5 container-fluid">
+            <div class="row row-gap-3">
+              <div class="form-text col-12 w-100">
+                You will be staying
+                <bold class="fw-bold text-danger-emphasis" id="numOfNights"
+                  >0</bold
+                >
+                nights
+              </div>
+      
+              <div class="col-12 w-100">
+                <button
+                  class="btn-primary btn w-100 center"
+                  type="submit"
+                  id="submit"
+                >
+                  Reserve
+                        <span class="form-text">
+                Get this price (Limited availabilty)
+                        </span>
+                </button>
+              </div>
+            </div>
+            <p></p>
+          </div>
+        </form>
       </div>
-      <!-- <div class="p-5"></div> -->
+      <div class="p-5"></div>
     </div>
   </body>
 </html>

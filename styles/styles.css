@@ -20,7 +20,8 @@ h5, h1, h2, h3, h4{
 }
 
 .bg-nav{
-    background: #000000;
+    background: #ffffff2f;
+    backdrop-filter: blur(10px);
 }
 
 .form-control{
