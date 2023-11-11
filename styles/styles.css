@@ -20,7 +20,7 @@ h5, h1, h2, h3, h4{
 }
 
 .bg-nav{
-    background: #ffffff2f;
+    background: #666a6da1;
     backdrop-filter: blur(10px);
 }
 
@@ -30,4 +30,14 @@ h5, h1, h2, h3, h4{
 
 .btn{
     border-radius: 0px;
+}
+
+.vertical-text {
+    writing-mode: vertical-lr;
+    text-orientation: sideways;
+    /* transform: translateY(-50%); */
+    top: 40%;
+    /* padding: 2.5rem 0.5rem 2.5rem 0.5rem; */
+    font-size: calc(.75em + 0.5vw);
+
 }
